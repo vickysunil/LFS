@@ -93,7 +93,7 @@ make -J1||make
 make install
 cd /LFSPkgBuildScripts/admin/LFSPkg
 echo "I" |BOOTSTRAP=1 ./LFSPkg.LFSBuild install
-echo "Y" |lfspkg --setup
+echo "y" |lfspkg --setup
 cd /LFSPkgBuildScripts/system/system-meta
 ./system-meta.LFSBuild install
 EOT
