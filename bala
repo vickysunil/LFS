@@ -67,7 +67,7 @@ if [ "X$EXTFOLDER" != "X" ];then
 	sudo mount --bind $EXTFOLDER/${SOURCEARCHIVES} $LFS/${SOURCEARCHIVES}
 fi
 
-./BuildFileSystem-SystemD
+sudo ./BuildFileSystem-SystemD
 
 
 sudo chown -R $USER:$USER $LFS/LFSPkgBuilds $LFS/LFSSourceArchives/$LFSVERSION $LFS/LFSBuiltPackages/$LFSVERSION
