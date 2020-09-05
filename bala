@@ -28,7 +28,7 @@ export BUILTPACKAGES
 export EXTFOLDER
 export KERNELVERSION
 export USESYSTEMD
-
+bbb=`pwd`
 cd $LFS
 sudo git clone https://github.com/KeithDHedger/LFSPkgBuilds.git
 
@@ -45,8 +45,13 @@ cd LFSScripts
 rm -rf BuildTools-SystemD
 
 sudo git clone https://github.com/balaspidy/LFS.git
+sleep 5
+cd $bbb
+sudo cp BuildTools-SystemD $LFS/LFSScripts
+cd $LFS/LFSScripts/
 sudo chown -R $USER:$USER BuildTools-SystemD
 sudo chmod 755 BuildTools-SystemD
+
 
 sleep 3
 
