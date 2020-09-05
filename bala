@@ -97,8 +97,8 @@ cd openssl-1.1.1c
 make -J1||make
 make install
 cd /LFSPkgBuildScripts/admin/LFSPkg
-BOOTSTRAP=1 ./LFSPkg.LFSBuild install
-lfspkg --setup
+echo "I" |BOOTSTRAP=1 ./LFSPkg.LFSBuild install
+echo "Y" |lfspkg --setup
 cd /LFSPkgBuildScripts/system/system-meta
 ./system-meta.LFSBuild install
 EOT
