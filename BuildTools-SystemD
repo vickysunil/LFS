@@ -417,7 +417,7 @@ do
 			;;
 
 
-		16)
+		14)
 			NAME=bzip2
 			VERSION=$BZIP2_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.gz
@@ -429,7 +429,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		17)
+		15)
 			NAME=coreutils
 			VERSION=$COREUTILS_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -442,7 +442,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		18)
+		16)
 			NAME=diffutils
 			VERSION=$DIFFUTILS_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -455,7 +455,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		19)
+		17)
 			NAME=file
 			VERSION=$FILE_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.gz
@@ -468,7 +468,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		20)
+		18)
 			NAME=findutils
 			VERSION=$FINDUTILS_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.gz
@@ -484,7 +484,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		21)
+		19)
 			NAME=gawk
 			VERSION=$GAWK_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -497,7 +497,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		22)
+		20)
 			NAME=gettext
 			VERSION=$GETTEXT_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -510,7 +510,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		23)
+		21)
 			NAME=grep
 			VERSION=$GREP_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -523,7 +523,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		24)
+		22)
 			NAME=gzip
 			VERSION=$GZIP_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -536,7 +536,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		25)
+		23)
 			NAME=make
 			VERSION=$MAKE_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.gz
@@ -550,7 +550,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		26)
+		24)
 			NAME=patch
 			VERSION=$PATCH_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -563,7 +563,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		27)
+		25)
 			NAME=perl
 			VERSION=$PERL_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -578,7 +578,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		28)
+		26)
 			NAME=Python
 			VERSION=$PYTHON_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -593,7 +593,7 @@ do
 			;;
 
 
-		29)
+		27)
 			NAME=sed
 			VERSION=$SED_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -606,7 +606,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		30)
+		28)
 			NAME=tar
 			VERSION=$TAR_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -618,7 +618,7 @@ do
 			rm -rf ${NAME}-${VERSION}
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
-		31)
+		29)
 			NAME=texinfo
 			VERSION=$TEXINFO_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -631,7 +631,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		32)
+		30)
 			NAME=util-linux
 			VERSION=$UTILLINUX_VERS
 			tar -xvf ${NAME}-${VERSION}.tar.xz
@@ -644,7 +644,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		33)
+		31)
 			NAME=xz
 			VERSION=$XZ_VERS
 			tar -xvf${NAME}-${VERSION}.tar.xz
@@ -657,7 +657,7 @@ do
 			echo "$((++ TOOLNUM))" > ${SYSTEMSOURCE}/toolnum
 			;;
 
-		34)
+		32)
 			strip --strip-debug /tools/lib/*|| true
 			/usr/bin/strip --strip-unneeded /tools/{,s}bin/* || true
 			rm -rf /tools/{,share}/{info,man,doc}
