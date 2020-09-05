@@ -46,6 +46,7 @@ rm -rf BuildTools-SystemD
 
 sudo git clone https://github.com/balaspidy/LFS.git
 sudo chown -R $USER:$USER BuildTools-SystemD
+sudo chmod 755 BuildTools-SystemD
 
 sleep 3
 
