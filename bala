@@ -38,8 +38,8 @@ sudo chown -R $USER:$USER $LFS/LFSPkgBuilds
 ln -sv LFSPkgBuilds/LFSPkgBuildScripts $LFS/LFSPkgBuildScripts
 ln -sv LFSPkgBuilds/LFSScripts $LFS/LFSScripts
 
+sleep 2
 cd LFSScripts
-
 ./LFSSetUp
 
 rm -rf BuildTools-SystemD
@@ -56,7 +56,8 @@ sudo chmod 755 BuildTools-SystemD
 
 
 sleep 3
-
+echo "=================Building Tools for Systemd============"
+echo "=================Stage 1======================="
 ./BuildTools-SystemD
 
 sleep 5
@@ -85,6 +86,10 @@ wget -c --no-check-certificate "https://github.com/KeithDHedger/LFSPkg/archive/m
 unzip LFSPkg.zip
 cd $LFS/LFSSourceArchives/9.0/SYSTEM/
 sudo wget https://www.openssl.org/source/old/1.1.1/openssl-1.1.1c.tar.gz
+echo "==========Stage 1/4 completed========================"
+sleep 2
+echo "==========Entering into chroot stage =============="
+echo "==========Stage 2==============================="
 cd $LFS/LFSScripts
 sudo ./Chroot system <<"EOT"
 cd /LFSSourceArchives/9.0/SYSTEM
@@ -124,6 +129,10 @@ install -v -m644    doc/{FAQ,HACK_GPM,README*}        \
 		   
 
 EOT
+echo "===========Stage 2/4 Completed========="
+sleep 2
+echo "============kernel install stage======="
+echo "===========Stage 3=================="
 cd /
 sudo rm /tools
 sudo rm -rf $LFS/tools
@@ -135,5 +144,18 @@ tar -xf cpio-2.13
 make -J1||make
 make install
 cd /LFSPkgBuildScripts/kernel
-
+sed -i 's/cp $KERNELCONFIG .config/#cp $KERNELCONFIG .config/g' kernel.LFSBuild
 ./kernel.LFSBuild install
+./firmware.LFSBuild install
+grub-install /dev/sda
+EOT
+echo "=========Stage 3/4 completed======"
+sleep 2
+echo "=====grub editing==========="
+echo "==========Stage 4============"
+cd /
+sudo update-grub
+sudo cp /boot/grub/grub.conf /mnt/LFS/boot/grub
+echo ======grub editing completed"
+echo "=======stage 4/4 completed===="
+echo "Please umount /mnt/LFS and reboot the server and check"
