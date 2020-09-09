@@ -62,8 +62,6 @@ echo "=================Stage 1======================="
 
 sleep 5
 
-cd $LFS/LFSScripts/
-
 . ./SystemData
 mkdir -vp ${LFS}/${SOURCEARCHIVES}||true
 mkdir -vp ${LFS}/${BUILTPACKAGES}||true
