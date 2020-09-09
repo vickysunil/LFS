@@ -60,7 +60,16 @@ echo "=================Building Tools for Systemd============"
 echo "=================Stage 1======================="
 ./BuildTools-SystemD
 
+cd /LFSSourceArchives/9.0/SYSTEM
+tar -xf bison-3.4.1.tar.xz
+cd bison-3.4.1
+./configure --prefix=/tools
+make -J1||make
+make install
+
 sleep 5
+
+cd $LFS/LFSScripts/
 
 . ./SystemData
 mkdir -vp ${LFS}/${SOURCEARCHIVES}||true
@@ -69,6 +78,7 @@ if [ "X$EXTFOLDER" != "X" ];then
 	sudo mount --bind $EXTFOLDER/${BUILTPACKAGES} $LFS/${BUILTPACKAGES}
 	sudo mount --bind $EXTFOLDER/${SOURCEARCHIVES} $LFS/${SOURCEARCHIVES}
 fi
+
 
 sudo ./BuildFileSystem-SystemD
 
@@ -92,12 +102,7 @@ echo "==========Entering into chroot stage =============="
 echo "==========Stage 2==============================="
 cd $LFS/LFSScripts
 sudo ./Chroot system <<"EOT"
-cd /LFSSourceArchives/9.0/SYSTEM
-tar -xf bison-3.4.1.tar.xz
-cd bison-3.4.1
-./configure --prefix=/tools
-make -J1||make
-make install
+
 cd /LFSPkgBuildScripts/admin/LFSPkg
 echo "I" |BOOTSTRAP=1 ./LFSPkg.LFSBuild install
 echo "y" |lfspkg --setup
