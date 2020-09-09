@@ -1,38 +1,5 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@balaspidy 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-KeithDHedger
-/
-LFSPkgBuilds
-2
-52
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-LFSPkgBuilds/LFSPkgBuildScripts/system/system-meta/system-systemd-meta.LFSBuild
-@KeithDHedger
-KeithDHedger script tweaks, more systemd stuff ...
-Latest commit ce75ff5 25 days ago
- History
- 1 contributor
-Executable File  130 lines (118 sloc)  1.88 KB
-  
-#!/bin/bash
+  #!/bin/bash
 
 . /usr/share/LFSPkg/LFSFunctions
 
