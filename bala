@@ -60,13 +60,6 @@ echo "=================Building Tools for Systemd============"
 echo "=================Stage 1======================="
 ./BuildTools-SystemD
 
-cd /LFSSourceArchives/9.0/SYSTEM
-tar -xf bison-3.4.1.tar.xz
-cd bison-3.4.1
-./configure --prefix=/tools
-make -J1||make
-make install
-
 sleep 5
 
 cd $LFS/LFSScripts/
@@ -102,6 +95,12 @@ echo "==========Entering into chroot stage =============="
 echo "==========Stage 2==============================="
 cd $LFS/LFSScripts
 sudo ./Chroot system <<"EOT"
+/LFSSourceArchives/9.0/SYSTEM/
+tar -xf bison-3.4.1.tar.xz
+cd bison-3.4.1
+./configure --prefix=/tools
+make -J1||make
+make install
 
 cd /LFSPkgBuildScripts/admin/LFSPkg
 echo "I" |BOOTSTRAP=1 ./LFSPkg.LFSBuild install
