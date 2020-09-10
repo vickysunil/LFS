@@ -93,7 +93,7 @@ echo "==========Entering into chroot stage =============="
 echo "==========Stage 2==============================="
 cd $LFS/LFSScripts
 sudo ./Chroot system <<"EOT"
-/LFSSourceArchives/9.0/SYSTEM/
+cd /LFSSourceArchives/9.0/SYSTEM/
 tar -xf bison-3.4.1.tar.xz
 cd bison-3.4.1
 ./configure --prefix=/tools
