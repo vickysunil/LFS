@@ -48,7 +48,7 @@ sudo git clone https://github.com/balaspidy/LFS.git
 sleep 5
 cd $bbb
 sudo cp BuildTools-SystemD $LFS/LFSScripts
-sudo mv  system-meta.LFSBuild /mnt/LFS/LFSPkgBuildScripts/system/system-meta/system-systemd-meta.LFSBuild
+sudo cp  system-meta.LFSBuild /mnt/LFS/LFSPkgBuildScripts/system/system-meta/system-systemd-meta.LFSBuild
 sudo chmod 777 /mnt/LFS/LFSPkgBuildScripts/system/system-meta/system-systemd-meta.LFSBuild
 cd $LFS/LFSScripts/
 sudo chown -R $USER:$USER BuildTools-SystemD
