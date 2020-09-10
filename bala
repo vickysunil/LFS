@@ -158,7 +158,7 @@ echo "=====grub editing==========="
 echo "==========Stage 4============"
 cd /
 sudo update-grub
-sudo cp /boot/grub/grub.conf /mnt/LFS/boot/grub
+sudo cp /boot/grub/grub.cfg /mnt/LFS/boot/grub
 echo ======grub editing completed"
 echo "=======stage 4/4 completed===="
 echo "Please umount /mnt/LFS and reboot the server and check"
