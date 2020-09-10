@@ -30,6 +30,7 @@ export KERNELVERSION
 export USESYSTEMD
 bbb=`pwd`
 cd $LFS
+sudo wget wget https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2
 sudo git clone https://github.com/KeithDHedger/LFSPkgBuilds.git
 
 #Own the files:
