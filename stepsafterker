@@ -430,3 +430,54 @@ serf ln /usr/bin/apu -congig 1 link needs to create
 ----------
 subversion need to dit
 
+==============
+https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.xz
+
+==================
+
+link curl to git
+
+=========
+
+Doxygen-1.8.16 
+
+mkdir -v build &&
+cd       build &&
+
+cmake -G "Unix Makefiles"         \
+      -DCMAKE_BUILD_TYPE=Release  \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -Wno-dev .. &&
+
+make
+
+make install &&
+install -vm644 ../doc/*.1 /usr/share/man/man1
+
+===========================
+
+Before cups
+
+Graphviz-2.44.1
+
+sed -i '/LIBPOSTFIX="64"/s/64//' configure.ac &&
+
+autoreconf                            &&
+./configure --prefix=/usr PS2PDF=true &&
+make
+
+make install
+
+=========================
+libusb-1.0
+Vala-0.48.10 
+autoconfig need to edit
+
+===============
+
+which command link
+
+ln -s /usr/local/bin/python2.7 /usr/bin/python2.7
+Autoconf-2.13
+===============
+
